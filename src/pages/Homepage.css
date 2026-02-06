@@ -1,0 +1,278 @@
+.hero-carousel {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    max-width: 800px;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-sm);
+}
+
+.carousel-content h2 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.carousel-content p {
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-white);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 3;
+}
+
+.indicator {
+    width: 40px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color var(--transition-base);
+}
+
+.indicator.active {
+    background-color: var(--color-white);
+}
+
+/* Destinations */
+.destinations-section {
+    background-color: var(--color-beige);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.destination-card {
+    text-align: center;
+}
+
+.destination-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+}
+
+.destination-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: var(--color-white);
+}
+
+.temperature {
+    font-size: var(--font-size-2xl);
+    font-weight: 300;
+}
+
+.weather {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+.destination-name {
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+}
+
+/* Collections */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    aspect-ratio: 3/4;
+}
+
+.collection-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-slow);
+}
+
+.collection-card:hover .collection-image {
+    transform: scale(1.05);
+}
+
+.collection-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: var(--color-white);
+}
+
+.collection-overlay h3 {
+    font-size: var(--font-size-xl);
+    margin: 0;
+}
+
+/* Lifestyle */
+.lifestyle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.lifestyle-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    aspect-ratio: 4/5;
+}
+
+.lifestyle-item.large {
+    grid-row: span 2;
+}
+
+.lifestyle-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.lifestyle-item:hover img {
+    transform: scale(1.05);
+}
+
+.lifestyle-caption {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: var(--spacing-lg);
+    color: var(--color-white);
+    z-index: 2;
+}
+
+.lifestyle-caption h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.lifestyle-caption p {
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .destinations-grid,
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-content {
+        max-width: 600px;
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-carousel {
+        height: 60vh;
+        min-height: 450px;
+    }
+
+    .carousel-content {
+        max-width: 90%;
+        padding: var(--spacing-sm) var(--spacing-xs);
+    }
+
+    .destinations-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lifestyle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lifestyle-item.large {
+        grid-row: span 1;
+    }
+
+    .destination-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .destinations-grid,
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-content {
+        padding: var(--spacing-xs);
+    }
+}

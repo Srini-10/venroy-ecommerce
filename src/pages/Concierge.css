@@ -1,0 +1,145 @@
+.concierge-header {
+    background-color: var(--color-beige);
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.concierge-header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 300;
+    margin-bottom: var(--spacing-sm);
+}
+
+.concierge-header p {
+    color: var(--color-gray);
+    font-size: var(--font-size-lg);
+}
+
+.concierge-section h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+}
+
+.lead {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-charcoal);
+}
+
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.travel-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    aspect-ratio: 4/5;
+}
+
+.travel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.travel-card:hover img {
+    transform: scale(1.05);
+}
+
+.travel-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: var(--color-white);
+}
+
+.travel-card-content h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.travel-card-content p {
+    color: var(--color-white);
+    opacity: 0.9;
+    font-size: var(--font-size-sm);
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.playlist-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base);
+}
+
+.playlist-card:hover {
+    transform: translateY(-4px);
+}
+
+.playlist-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.playlist-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.playlist-card p {
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+}
+
+.sustainability-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sustainability-list li {
+    padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+.sustainability-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+
+    .travel-grid,
+    .playlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .travel-grid,
+    .playlist-grid {
+        grid-template-columns: 1fr;
+    }
+}

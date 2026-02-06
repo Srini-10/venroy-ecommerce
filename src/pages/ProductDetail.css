@@ -1,0 +1,216 @@
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+.product-gallery {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.main-image {
+    background-color: var(--color-beige);
+    aspect-ratio: 3/4;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.thumbnail {
+    aspect-ratio: 3/4;
+    background-color: var(--color-beige);
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+}
+
+.thumbnail.active {
+    border-color: var(--color-black);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.breadcrumb {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.breadcrumb a {
+    color: var(--color-gray);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-black);
+}
+
+.product-details h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 400;
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-price-large {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-description {
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-charcoal);
+}
+
+.selection-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.selection-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.color-swatches {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.color-swatch {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.color-swatch.selected {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.size-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.size-button {
+    min-width: 60px;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-light-gray);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.size-button.selected {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.product-actions-detail {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.btn-add-to-cart {
+    flex: 1;
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.btn-wishlist-detail {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--color-black);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-base);
+}
+
+.btn-wishlist-detail:hover,
+.btn-wishlist-detail.active {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.product-info-accordion {
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.product-info-accordion details {
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.product-info-accordion summary {
+    padding: var(--spacing-md) 0;
+    cursor: pointer;
+    font-weight: 500;
+    user-select: none;
+}
+
+.product-info-accordion summary:hover {
+    opacity: 0.7;
+}
+
+.product-info-accordion p {
+    padding-bottom: var(--spacing-md);
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .product-gallery {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-actions-detail {
+        flex-direction: column;
+    }
+
+    .btn-wishlist-detail {
+        justify-content: center;
+    }
+}

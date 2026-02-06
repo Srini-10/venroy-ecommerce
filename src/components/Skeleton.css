@@ -1,0 +1,97 @@
+.skeleton-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.skeleton-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(90deg,
+            var(--color-beige) 25%,
+            var(--color-light-gray) 50%,
+            var(--color-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-content {
+    padding: var(--spacing-md);
+}
+
+.skeleton-title {
+    height: 20px;
+    background: linear-gradient(90deg,
+            var(--color-beige) 25%,
+            var(--color-light-gray) 50%,
+            var(--color-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.skeleton-text {
+    height: 14px;
+    background: linear-gradient(90deg,
+            var(--color-beige) 25%,
+            var(--color-light-gray) 50%,
+            var(--color-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.skeleton-text.short {
+    width: 60%;
+}
+
+.skeleton-list-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.skeleton-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,
+            var(--color-beige) 25%,
+            var(--color-light-gray) 50%,
+            var(--color-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    flex-shrink: 0;
+}
+
+.skeleton-list-content {
+    flex: 1;
+}
+
+.skeleton-line {
+    height: 16px;
+    background: linear-gradient(90deg,
+            var(--color-beige) 25%,
+            var(--color-light-gray) 50%,
+            var(--color-beige) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}

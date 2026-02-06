@@ -1,0 +1,62 @@
+.gift-shop-header {
+    background-color: var(--color-beige);
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.gift-shop-header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 300;
+    margin-bottom: var(--spacing-sm);
+}
+
+.gift-shop-header p {
+    color: var(--color-gray);
+    font-size: var(--font-size-lg);
+}
+
+.gift-intro .lead {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--color-charcoal);
+}
+
+.gift-services {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-2xl);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.service-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card p {
+    color: var(--color-gray);
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
